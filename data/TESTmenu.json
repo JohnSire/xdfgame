@@ -1,0 +1,56 @@
+{
+    "button":[{
+            "name":"梦想叉烧包",
+            "sub_button":[
+                {
+					"type":"view",
+					"name":"领红包",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F32047.dowei8.com%2Fxdfgame%2Foauth%2Fxdfbag&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[]
+				},
+				{
+					"type":"view",
+					"name":"我的红包","url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&scope=snsapi_base&response_type=code&state=xdf&redirect_uri=http%3A%2F%2F32047.dowei8.com%2Fxdfgame%2Fbag%2Fmybag?qufen=1#wechat_redirect",
+					"sub_button":[]
+				},
+				 {
+					"type":"view",
+					"name":"活动说明",
+					"url":"http://32047.dowei8.com/xdfgame/views/intro.jsp",
+					"sub_button":[
+						
+					]
+				}
+            ]
+        },{
+			"name":"设置",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"我要建议",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F32047.dowei8.com%2Fxdfgame%2Foauth%2Fsuggest&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+				},
+				{
+					"type":"view",
+					"name":"常见问题",
+					"url":"http://32047.dowei8.com/xdfgame/views/ques.jsp",
+					"sub_button":[
+						
+					]
+				},
+				{
+					"type":"view",
+					"name":"学校DIY",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F32047.dowei8.com%2Fxdfgame%2Foauth%2FdiyShow&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+					
+				}
+			]
+		}
+    ]
+}

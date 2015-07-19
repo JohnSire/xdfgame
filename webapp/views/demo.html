@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>微信Js API Demos</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no">
+        <style type="text/css">
+            p {
+                padding: 5px 10px;
+            }
+        </style>
+        <script type="text/javascript" src="xdfjs/WeixinApi.js"></script>
+    </head>
+    <body>
+        <p>这是一个测试页面！请直接分享到微信好友、朋友圈、腾讯微博看效果吧！</p>
+        <p>如果你是扫一扫过来的，可以复制连接，然后发给任何一个微信好友，再点击连接进入测试</p>
+        <p>
+            <button id="optionMenu">WeixinApi.hideOptionMenu</button>
+        </p>
+        <p>
+            <button id="networkType">WeixinApi.getNetworkType</button>
+        </p>
+        <p>
+            <button id="imagePreview">WeixinApi.imagePreview</button>
+        </p>
+        <p>
+            <button id="closeWindow">WeixinApi.closeWindow</button>
+        </p>
+        <p>
+            <button id="scanQRCode">WeixinApi.scanQRCode</button>
+        </p>
+
+        <p>
+            <button id="getInstallState">WeixinApi.getInstallState</button>
+        </p>
+
+        <p>
+            <a href="?" id="refresh">点击这里刷新！！！！</a>
+        </p>
+
+        <script type="text/javascript">
+			alert(WeixinApi);
+            var addEvent = function(elId,listener){
+                document.getElementById(elId)
+                        .addEventListener('click',function(e){
+                            if(!window.WeixinApi || !window.WeixinJSBridge) {
+                                alert('请确认您是在微信内置浏览器中打开的，并且WeixinApi.js已正确引用');
+                                e.preventDefault();
+                                return false;
+                            }
+                            listener(this,e);
+                        },false);
+            };
+
+            var optionMenuOn = true;
+            var toolbarOn = true;
+
+            addEvent('optionMenu',function(el,e){
+                if(optionMenuOn) {
+                    el.innerHTML = "WeixinApi.showOptionMenu";
+                    WeixinApi.hideOptionMenu();
+                }else{
+                    el.innerHTML = "WeixinApi.hideOptionMenu";
+                    WeixinApi.showOptionMenu();
+                }
+                optionMenuOn = !optionMenuOn;
+            });
+
+            addEvent('networkType',function(el,e){
+                WeixinApi.getNetworkType(function(network) {
+                    alert("当前网络类型：" + network);
+                });
+            });
+
+            addEvent('imagePreview',function(el,e){
+                location.href = "http://www.baidufe.com/wximage?tag=%E7%BE%8E%E5%A5%B3";
+            });
+
+            addEvent('closeWindow',function(el,e){
+                WeixinApi.closeWindow({
+                    success : function(resp){
+                        alert('关闭窗口成功！');
+                    },
+                    fail : function(resp){
+                        alert('关闭窗口失败');
+                    }
+                });
+            });
+
+            addEvent('scanQRCode',function(el,e){
+                WeixinApi.scanQRCode({
+                    success : function(resp){
+                        alert('扫描器已打开！');
+                    },
+                    fail : function(resp){
+                        alert('扫描器无法打开');
+                    }
+                });
+            });
+
+            addEvent("getInstallState", function(el, e) {
+                WeixinApi.getInstallState({
+                    packageName: "cn.dxy.android.aspirin",
+                    packageUrl: "dxy-aspirin"
+                }, {
+                    success: function(resp) {
+                        alert("App is installed, version " + resp.version);
+                    },
+                    fail: function(resp) {
+                        alert("Oops, something goes wrong or app is not installed.");
+                    }
+                })
+            });
+
+            addEvent('refresh',function(el,e){
+                e.preventDefault();
+                location.replace('?' + Math.random(),true);
+            });
+
+            WeixinApi.ready(function(Api) {
+
+                var wxData = {
+                    "appId": "", 
+                    "imgUrl" : 'http://www.baidufe.com/fe/blog/static/img/weixin-qrcode-2.jpg',
+                    "link" : 'http://www.baidufe.com',
+                    "desc" : '大家好，我是Alien，Web前端&Android客户端码农，喜欢技术上的瞎倒腾！欢迎多交流',
+                    "title" : "大家好，我是赵先烈"
+                };
+
+               
+                var wxCallbacks = {
+                    ready : function() {
+                        alert("准备分享");
+                    },
+                    cancel : function(resp) {
+                        alert("分享被取消，msg=" + resp.err_msg);
+                    },
+                    fail : function(resp) {
+                        alert("分享失败，msg=" + resp.err_msg);
+                    },
+                    confirm : function(resp) {
+                        alert("分享成功，msg=" + resp.err_msg);
+                    },
+                    all : function(resp,shareTo) {
+                        alert("分享" + (shareTo ? "到" + shareTo : "") + "结束，msg=" + resp.err_msg);
+                    }
+                };
+
+                Api.shareToFriend(wxData, wxCallbacks);
+
+                Api.shareToTimeline(wxData, wxCallbacks);
+
+                Api.shareToWeibo(wxData, wxCallbacks);
+
+                Api.generalShare(wxData,wxCallbacks);
+
+                var elOptionMenu = document.getElementById('optionMenu');
+                elOptionMenu.click(); // 先隐藏
+                elOptionMenu.click(); // 再显示
+            });
+
+        </script>
+    </body>
+</html>

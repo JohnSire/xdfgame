@@ -1,0 +1,80 @@
+{
+	"button":[
+		{
+			"name":"爱上红包",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"我要领",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F27.54.235.167%2Fxdfgame%2Foauth%2Fxdfbag&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+					
+				},
+				{
+					"type":"view",
+					"name":"活动说明",
+					"url":"http://27.54.235.167/xdfgame/views/intro.jsp",
+					"sub_button":[
+						
+					]
+				},
+				{
+					"type":"view",
+					"name":"我要领第二版",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F27.54.235.167%2Fxdfgame%2Fdrawbag%2Fschoolbag?kejiancao=1&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+					
+				}
+				
+			]
+			
+		},
+		{
+			"name":"红包记录",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"我的红包",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&scope=snsapi_base&response_type=code&state=xdf&redirect_uri=http%3A%2F%2F27.54.235.167%2Fxdfgame%2Fbag%2Fmybag?qufen=1#wechat_redirect",
+					"sub_button":[
+						
+					]
+				}
+			]
+		},
+		{
+			"name":"设置",
+			"sub_button":[
+				{
+					"type":"view",
+					"name":"我要建议",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F27.54.235.167%2Fxdfgame%2Foauth%2Fsuggest&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+				},
+				{
+					"type":"view",
+					"name":"常见问题",
+					"url":"http://27.54.235.167/xdfgame/views/ques.jsp",
+					"sub_button":[
+						
+					]
+				},
+				{
+					"type":"view",
+					"name":"学校DIY",
+					"url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxaaa7f82325dc4178&redirect_uri=http%3A%2F%2F27.54.235.167%2Fxdfgame%2Foauth%2FdiyShow&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect",
+					"sub_button":[
+						
+					]
+					
+				}
+			]
+		}
+	]
+}

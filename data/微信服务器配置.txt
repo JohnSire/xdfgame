@@ -1,0 +1,4 @@
+url:http://27.54.235.167/xdfgame/weixin/recMsg
+token:WEIXINTOKEN
+
+红包详情：mybagDetail.jsp

@@ -1,0 +1,14 @@
+/* CSS Document */
+*{ margin:0; padding:0; font-family:"微软雅黑", "宋体";}
+body{ height:100%; overflow:hidden; }
+ul,li{ list-style: none;}
+.box{width:640px; height:1100px; overflow:hidden;
+position:relative;transform-origin:0 0; -webkit-transform-origin:0 0; }
+.page{ width:640px; height:1100px; position:absolute; top:0; left:0; background:#b80b15;}
+.pr{ position:relative;}
+.index{ left:0;}
+.clear{ clear:both;}
+
+.share div{ width:569px; margin:20px auto;background:#b80b15;}
+.share .btnS1{position:absolute; top:780px; left:40px;}
+.share .btnS2{position:absolute; top:780px; right:40px;}
